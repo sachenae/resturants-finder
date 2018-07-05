@@ -1,13 +1,13 @@
 {
-  "name": "weather-forcast-graph",
+  "name": "app",
   "version": "1.0.0",
-  "description": "Simple app for getting weather forecast graph for searched city",
+  "description": "Simple app",
   "main": "index.js",
   "repository": "",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
-    "test:watch": "npm run test -- --watch"
+    "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "postinstall": "webpack -p",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -29,9 +29,11 @@
     "lodash": "^3.10.1",
     "react": "16.3.2",
     "react-dom": "16.3.2",
+    "react-google-maps": "^9.4.5",
     "react-redux": "5.0.7",
     "react-sparklines": "^1.7.0",
     "redux": "4.0.0",
-    "redux-promise": "^0.6.0"
+    "redux-promise": "^0.6.0",
+    "superagent": "^3.8.3"
   }
 }
