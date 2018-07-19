@@ -23,7 +23,11 @@ class Home extends React.PureComponent {
 
     render(){
         return(
-            
+           <div> <h1 className="type--upercase">
+                                    <em>
+                                        <strong><center>RESTURANT FINDER</center></strong>
+                                    </em>
+                                </h1>
                 <div className="row" className="m-auto">
                  <div className="col-md-8">
                 <MyMap 
@@ -38,6 +42,7 @@ class Home extends React.PureComponent {
                <h5>  Zoom and scroll the map to discover the resturants, </h5>
                <h5>  The cluster number represents the number of resutrant in that area, click to see more</h5>
                <h5>  The markers show the information of resturant when clicked</h5>
+            </div>
             </div>
         );
     }
