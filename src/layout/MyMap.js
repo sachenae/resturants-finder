@@ -203,7 +203,7 @@ const MyMap = compose(
     onToggleOpen: ({ isOpen }) => () => ({
       isOpen: !isOpen,
     }),
-    showInfo: ({ showInfo, isOpen }) => (id) => ({
+    showInfo: ({ showInfo, isOpen, position, marker }) => (id) => ({
       isOpen: !isOpen,
       showInfoIndex: id
     })
@@ -235,7 +235,6 @@ const MyMap = compose(
       {props.markers && props.markers.map((marker) => (
         <Marker
           key={marker.id}
-          
           position={{ lat: marker.location.lat, lng: marker.location.lon }}
           onClick={() => { props.showInfo(marker.id) }}
         >

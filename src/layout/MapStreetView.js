@@ -21,12 +21,13 @@ const MapStreetView = compose(
     loadingElement: <div style={{ height: `100%` }} />,
     containerElement: <div style={{ height: `800px` }} />,
     mapElement: <div style={{ height: `100%` }} />,
+    center:  { lat: 60.1665291, lng: 24.9310137},
   }),
   withScriptjs,
   withGoogleMap
 )(props =>
   <GoogleMap >
-    <StreetViewPanorama defaultPosition={{ lat: 60.1665291, lng: 24.9310137 }} visible>
+    <StreetViewPanorama defaultPosition={props.center} visible>
     {props.markers && props.markers.map((marker) => (
         <OverlayView
         position={{ lat: marker.location.lat, lng: marker.location.lon }}
@@ -34,26 +35,8 @@ const MapStreetView = compose(
           getPixelPositionOffset={getPixelPositionOffset}
           key={marker.id}
       >
-        <Marker
-        key={marker.id}
+      <Marker/>
         
-        position={{ lat: marker.location.lat, lng: marker.location.lon }}
-        onClick={() => { props.showInfo(marker.id) }}
-        >
-        
-        {(props.isOpen && props.showInfoIndex == marker.id) &&
-        <InfoWindow
-        onCloseClick={props.onToggleOpen}
-        >
-        <div style={{ backgroundColor: `yellow`, opacity: 0.75, padding: `12px` }}>
-        <div style={{ fontSize: `16px`, fontColor: `#08233B` }}>
-            <h4>{marker.name}</h4>
-            <p>{marker.description}</p>
-        </div>
-        </div>
-    </InfoWindow>}
-
-        </Marker>
         </OverlayView>
     ))}
 
