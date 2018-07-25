@@ -31,7 +31,12 @@ class Info extends Component {
                 </h6>
                 <hr/>
                 <div className="row">
-                    {list}
+                <ul className="nav nav-pills nav-stacked anyClass">
+                <li class="nav-item">
+      {list}
+    </li>
+                    
+                    </ul>
                 </div>
             </div>
         );

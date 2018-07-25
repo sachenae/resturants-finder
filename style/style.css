@@ -90,3 +90,8 @@
   .map-name-marker:hover:before {
     border-color: gray transparent transparent;
   }
+
+  .anyClass {
+    height:800px;
+    overflow-y: scroll;
+  }
